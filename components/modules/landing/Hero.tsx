@@ -61,7 +61,7 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [api])
   return (
-    <div className="relative h-dvh lg:h-[850px] flex-col  flex items-center justify-center">
+    <div className="relative h-dvh md:h-[600px] xl:h-[850px] flex-col  flex items-center justify-center">
          
    {/* <TopBar />  */}
     
@@ -72,7 +72,7 @@ export function Hero() {
         align: "start",
         loop: true,
       }} orientation="horizontal"     >
-      <CarouselContent className=" h-dvh lg:h-[850px]">
+      <CarouselContent className=" h-dvh md:h-[600px] xl:h-[850px]">
         {Gallery.map((item,index) => (
           <CarouselItem className="relative z-30 p-0" key={item.id}>
 

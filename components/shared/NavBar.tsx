@@ -21,7 +21,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScroll(window.scrollY > 300);
+      setScroll(window.scrollY > 700);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -72,18 +72,18 @@ function NavBar() {
 
   className={`${
     scroll
-      ? " lg:fixed  flex  items-center top-0  lg:w-full overflow-hidden absolute mx-auto justify-center lg:top-0 "
+      ? " lg:fixed  flex  items-center top-0  xl:w-full overflow-hidden absolute mx-auto justify-center lg:top-0 "
       : "  transition-transform delay-150 absolute  mx-auto top-28  md:top-16 w-full lg:top-10 "
   } transition-all ease-linear  duration-300 w-full top-10 z-50  isolate bg-clip-padding h-36 sm:px-4 py-4`}
 >
-      <div className={`mx-auto bg-[#013220] text-white ${scroll ? ' w-full ' : '' }  font-serif transition-colors  flex  max-w-5xl py-2 px-12  rounded-3xl   items-center justify-between`}>
+      <div className={`mx-auto bg-[#013220] text-white ${scroll ? ' w-full ' : '' }  font-serif transition-colors max-w-sm md:max-w-2xl  flex  xl:max-w-5xl py-2 px-12  rounded-3xl   items-center justify-between`}>
         <Link className="lg:flex items-center hidden   justify-center" href="#">
           <Image src="/logo.png" className=" " alt="Logo" width={100} height={100}  />
        
         </Link>
 
         {/* Desktop Menu */}
-        <div className={`hidden lg:items-center text-2xl font-medium  font-serif    lg:justify-center space-x-11 w-full lg:flex`}>
+        <div className={`hidden lg:items-center text-lg xl:text-2xl font-medium  font-serif    lg:justify-center space-x-2 xl:space-x-11 w-full lg:flex`}>
           <Link className="text-bronze " href="/">
             Home
           </Link>
@@ -106,10 +106,16 @@ function NavBar() {
           Get Quote
         </Button> */}
 
-        <Button  className="text-[#013220] border   hover:bg-Gold border-yellow-500 bg-Gold hover:text-white rounded-lg font-medium">
+        <Button  className="text-[#013220] border hidden lg:flex   hover:bg-Gold border-yellow-500 bg-Gold hover:text-white rounded-lg font-medium">
             <LeafIcon className="w-4 h-4 mr-2 " />
             GET YOUR QUOTE
           </Button>
+           < div className="lg:hidden flex items-center gap-2">
+          <Image src="/logo.png" alt="Logo" width={40} height={40} />
+          <h1 className="text-xl font-bold  leading-loose tracking-widest"><span className="text-bronze">
+             I
+             </span>-GREEN</h1>
+        </div>
             {/* Mobile Menu Button */}
         <button className="lg:hidden" onClick={toggleMenu}>
           <Menu size={30} />
@@ -157,8 +163,29 @@ function NavBar() {
           >
             {item}
           </Link>
+          
         </motion.div>
       ))}
+       <motion.div variants={linkVariants} transition={{ delay: 0.5 }}>
+        {/* <Button
+          className="bg-[#ebdfc4] text-[#013220] hover:bg-[#D4AF37] hover:text-white rounded-lg font-medium"
+          onClick={toggleMenu}
+        >
+          Get Quote
+        </Button> */}
+
+
+         <Button  className="text-[#013220] border   hover:bg-Gold border-yellow-500 bg-Gold hover:text-white rounded-lg font-medium">
+            <LeafIcon className="w-4 h-4 mr-2 " />
+            GET YOUR QUOTE
+          </Button> 
+        </motion.div>
+
+
+
+
+
+
     </nav>
     <motion.div
       className="flex justify-center space-x-6"
