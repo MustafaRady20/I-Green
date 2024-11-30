@@ -10,7 +10,7 @@ function Stats() {
     
   
   return (  
-    <main className="w-full  overflow-hidden px-6 pt-24 h-full">
+    <main className="w-full  overflow-hidden px-4 pt-24 h-full">
       <section  ref={ref} className="container mx-auto max-w-6xl  w-full ">
         <div className="grid grid-cols-2 text-deepGreen gap-8 text-center md:grid-cols-4 lg:grid-cols-4">
           <StatItem value={2000} suffix="+" label="Happy Customers" isInView={isInView} />

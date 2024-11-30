@@ -60,7 +60,7 @@ export default function ServicesGrid() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-40 px-4">
+    <section className="py-44 px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="flex justify-between w-[95%] items-center mb-12">
           <h2 className="text-3xl font-semibold text-darkgreen">Tailored Landscape Services</h2>

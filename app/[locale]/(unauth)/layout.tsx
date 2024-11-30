@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import NavBar from "@/components/shared/NavBar";
 import FooterSection from "@/components/shared/FooterSection";
+import { TopBar } from "@/components/shared/TopBar";
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -45,7 +46,8 @@ export default async function RootLayout(props: {
       >
         {/* <Providers> */}
         <NextIntlClientProvider messages={messages}>
-           
+        <TopBar /> 
+
           <NavBar />
           {props.children}
           <FooterSection />

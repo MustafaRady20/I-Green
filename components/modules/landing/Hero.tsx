@@ -6,7 +6,7 @@ import { LeafIcon } from "lucide-react"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
 import React from "react"
-import { TopBar } from "@/components/shared/TopBar";
+// import { TopBar } from "@/components/shared/TopBar";
 // import { motion } from "framer-motion"
 // import { FaLeaf } from "react-icons/fa";
 
@@ -63,7 +63,7 @@ export function Hero() {
   return (
     <div className="relative h-dvh lg:h-[850px] flex-col  flex items-center justify-center">
          
-   <TopBar /> 
+   {/* <TopBar />  */}
     
      
     <Carousel setApi={setApi}
@@ -91,7 +91,7 @@ export function Hero() {
       </CarouselContent>
       <div className="absolute inset-0  bg-lightGreen/5" />
 
-      <div className="absolute right-4 top-1/2 flex z-50 -translate-y-1/2 flex-col gap-2">
+      <div className="absolute right-4 top-1/2 flex z-30 -translate-y-1/2 flex-col gap-2">
         {Gallery.map((_, index) => (
           <button
             key={index}

@@ -1,5 +1,6 @@
 
 import ServicesGrid from "@/components/modules/home/ServiceSection";
+import Gallery from "@/components/modules/landing/Gallery";
 import { Hero } from "@/components/modules/landing/Hero";
 import Stats from "@/components/modules/landing/Stats";
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Hero />
        <Stats />
        <ServicesGrid />
+       <Gallery />
     </main>
   );
 }
