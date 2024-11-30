@@ -3,7 +3,6 @@
 import React from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
 
 function Stats() {
   const ref = useRef(null)
