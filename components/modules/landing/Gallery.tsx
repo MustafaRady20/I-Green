@@ -76,7 +76,8 @@ export default function Gallery() {
  
    const router = useRouter()
   return (
-    <main className="w-full h-full pb-44 px-4 container max-w-7xl mx-auto">
+    <main className="w-full bg-[#fbfaf6] h-full pb-44 px-4 ">
+ <section className='container pt-12 max-w-7xl mx-auto'>
 
  {/* header */} 
         <header className=" w-full text-deepGreen mb-4 flex justify-between items-start ">
@@ -178,13 +179,15 @@ export default function Gallery() {
       {/* Load More Button */}
       <div className="text-center  mt-12">
         <Button
-          variant="outline"
-          className="group  text-darkgreen hover:text-white  relative overflow-hidden"
-        >
-          <Link href={"/gallery"} className="relative  z-10">Load more</Link>
-          <div className="absolute inset-0 bg-Gold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+          variant="link"
+          className="group  text-darkgreen underline text-lg hover:animate-pulse hover:text-deepGreen  relative overflow-hidden"
+        > 
+          <Link href={"/gallery"} className="relative  z-10">Full portofolio </Link>
+          {/* <div className="absolute inset-0 bg-Gold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" /> */}
         </Button>
       </div>
+      </section>
+
     </main>
   )
 }
