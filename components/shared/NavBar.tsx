@@ -72,11 +72,11 @@ function NavBar() {
 
   className={`${
     scroll
-      ? " lg:fixed  flex  items-center  lg:w-full overflow-hidden absolute mx-auto justify-center lg:top-0 "
-      : "  transition-transform delay-150 absolute mx-auto top-14 lg:top-10 "
-  } transition-all ease-linear  duration-300 w-full top-10 z-50  isolate bg-clip-padding h-36 px-4 py-4`}
+      ? " lg:fixed  flex  items-center top-0  lg:w-full overflow-hidden absolute mx-auto justify-center lg:top-0 "
+      : "  transition-transform delay-150 absolute  mx-auto top-28  md:top-16 w-full lg:top-10 "
+  } transition-all ease-linear  duration-300 w-full top-10 z-50  isolate bg-clip-padding h-36 sm:px-4 py-4`}
 >
-      <div className={`mx-auto bg-[#013220] text-white ${scroll ? ' w-full ' : '' }  font-serif transition-colors  flex  max-w-6xl py-2 px-12  rounded-3xl   items-center justify-between`}>
+      <div className={`mx-auto bg-[#013220] text-white ${scroll ? ' w-full ' : '' }  font-serif transition-colors  flex  max-w-5xl py-2 px-12  rounded-3xl   items-center justify-between`}>
         <Link className="lg:flex items-center hidden   justify-center" href="#">
           <Image src="/logo.png" className=" " alt="Logo" width={100} height={100}  />
        
