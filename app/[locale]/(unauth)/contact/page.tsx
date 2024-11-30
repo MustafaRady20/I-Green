@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { LeafIcon } from "lucide-react"
 import Image from "next/image"
 
 export default function ContactPage() {
@@ -74,9 +75,21 @@ export default function ContactPage() {
                     className="h-32"
                   />
                 </div>
-                <Button className="w-auto bg-green-700 hover:bg-green-800">
+                {/* <Button className="w-auto bg-green-700 hover:bg-green-800">
                   Get Free Quote
-                </Button>
+                </Button> */}
+
+                <Button
+              size="sm"
+              className="bg-deepGreen w-auto border border-Gold/50 hover:bg-Gold hover:text-white transition-colors delay-150   text-white   rounded-lg  font-medium"
+              asChild
+            >
+              <span className="flex text-deepGreen  cursor-pointer hover:text-white justify-center items-center" >
+              <LeafIcon size={30}  className="    mr-2" />
+                           Get Free Quote
+              </span>
+             
+            </Button>
               </form>
             </div>
 
