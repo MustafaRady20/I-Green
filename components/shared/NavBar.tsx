@@ -117,46 +117,7 @@ function NavBar() {
         </button>
       </div>
       {/* Mobile Side Drawer Menu */}
-      {/* <div
-        className={`fixed top-0 h-screen right-0 transition-all duration-200   px-6 flex flex-col justify-around py-12 w-full   bg-lightGreen  shadow-lg  
-          ${isMenuOpen ? "translate-x-0 animate-in  " : "translate-x-full h-full hidden"}`}
-      >
-        <header className="flex justify-between w-full  ">
-        <Image src="/logo.png" className=" " alt="Logo" width={100} height={100}  />
-        <button onClick={toggleMenu}>
-            <XIcon
-              size={30}
-              color="#134A55"
-              className={`duration-75 text-[#134A55] transition-transform ${
-                isMenuOpen ? "rotate-0" : "rotate-45"
-              }`}
-            />
-          </button>
-        </header>
-        <div className="flex flex-col h-full w-full mt-20 font-normal text-3xl gap-y-11">
-        <Link className="text-bronze " href="/">
-            Home
-          </Link>
-          <Link className="hover:text-[#D4AF37] " href="/about">
-            About
-          </Link>
-          <Link className=" hover:text-[#D4AF37]" href="/services">
-            Services
-          </Link>
-          <Link className=" hover:text-[#D4AF37]" href="/gallery">
-            Gallery
-          </Link>
-          <Link className=" hover:text-[#D4AF37]" href="/contact">
-            Contact
-          </Link>
-        </div>
-        <div className="flex justify-center space-x-6">
-          <FaBehanceSquare size={30} />
-          <BsInstagram size={30} />
-          <BsLinkedin size={30} /> 
-
-        </div>
-      </div> */}
+    
 
 <AnimatePresence>
 {isMenuOpen && (
