@@ -102,7 +102,7 @@ export default function ServicesGrid() {
       onMouseLeave={() => setHoveredIndex(null)}
       onClick={() => console.log('clicked')}
     >
-      <Image src={'/tree2.png'} alt={service.title} width={600} height={400} className="absolute rotate-180 -right-36 -top-36  md:-right-64 opacity-25 md:-top-48" />
+      <Image src={'/tree2.png'} alt={service.title} width={600} height={400} className="absolute rotate-180 -right-56 md:-right-64 -top-48 opacity-10  sm:opacity-25 md:-top-48" />
 
       {hoveredIndex === index && service.image ? (
         <div className="absolute lg:h-full lg:w-full inset-0">
@@ -154,7 +154,7 @@ export default function ServicesGrid() {
   
   }) => (
     <button
-      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-Gold rounded-full p-[6px] shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#fbfaf6] rounded-full p-[6px] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
       onClick={onClick}
       disabled={!enabled}
     >
@@ -167,7 +167,7 @@ export default function ServicesGrid() {
     onClick: () => void
   }) => (
     <button
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-Gold rounded-full p-[6px] shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#fbfaf6] rounded-full p-[6px] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
       onClick={onClick}
       disabled={!enabled}
     >

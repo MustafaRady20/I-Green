@@ -1,7 +1,7 @@
 "use client";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "../ui/button";
 
 import { useState } from "react";
@@ -17,18 +17,18 @@ function NavBar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const [scroll, setScroll] = useState(false);
+  // const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 700);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScroll(window.scrollY > 700);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const menuVariants = {
     closed: {
@@ -58,12 +58,10 @@ function NavBar() {
     <>
 
       <nav
-     className={`${scroll
-            ? " lg:fixed  flex  items-center top-0  2xl:w-full overflow-hidden absolute mx-auto justify-center lg:top-0 "
-            : "  transition-transform delay-150 absolute  mx-auto -top-0  md:top-16 w-full lg:top-10 "
-          } transition-all ease-linear  duration-300 w-full top-10 z-50  isolate bg-clip-padding h-36 sm:px-4 py-2 2xl:py-4`}
+     className={`
+           transition-all     absolute  mx-auto     lg:top-10 ease-linear  duration-150 w-full -top-2 z-50  isolate bg-clip-padding h-36 lg:px-4 py-2 2xl:py-4`}
       >
-        <div className={`mx-auto bg-[#013220] text-white ${scroll ? ' w-full ' : ''}  font-serif transition-colors max-w-md md:max-w-2xl  flex  2xl:max-w-5xl lg:max-w-4xl py-2 lg:px-8  px-10 2xl:px-12  rounded-3xl   items-center justify-between`}>
+        <div className={`mx-auto bg-[#013220]  text-white   font-serif transition-colors w-full  flex  2xl:max-w-5xl lg:max-w-4xl py-2 lg:px-8  px-10 2xl:px-12  lg:rounded-3xl   items-center justify-between`}>
           <Link className="lg:flex items-center hidden   justify-center" href="#">
             <Image src="/logo.png" className=" " alt="Logo" width={100} height={100} />
 
