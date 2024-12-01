@@ -10,7 +10,7 @@ function Stats() {
     
   
   return (  
-    <main className="w-full bg-[#ffffff] relative  overflow-hidden px-4 pt-24 h-full">
+    <main className="w-full bg-[#ffffff] relative  overflow-hidden  px-6 lg:px-4   pt-24 h-full">
       <section  ref={ref} className="container mx-auto max-w-6xl relative  w-full ">
         <div className="grid grid-cols-2 text-deepGreen gap-8 text-center md:grid-cols-4 lg:grid-cols-4">
           <StatItem value={24} suffix="+" label="years of experience" isInView={isInView} />
@@ -50,7 +50,7 @@ function StatItem({ value, suffix = '', decimals = 0, label, isInView }: StatIte
   return (
     <div> 
       <motion.div 
-        className="text-5xl text-darkgreen font-bold"
+        className="text-4xl  md:text-5xl  text-darkgreen font-bold"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -58,7 +58,7 @@ function StatItem({ value, suffix = '', decimals = 0, label, isInView }: StatIte
         <CountingNumber value={value} suffix={suffix} decimals={decimals} isInView={isInView} />
       </motion.div>
       <motion.div 
-        className="text-2xl text-darkgray"
+        className=" md:text-2xl text-darkgray"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}

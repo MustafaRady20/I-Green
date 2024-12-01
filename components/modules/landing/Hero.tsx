@@ -7,7 +7,7 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/componen
 import { cn } from "@/lib/utils"
 import React from "react"
 // import { TopBar } from "@/components/shared/TopBar";
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 // import { FaLeaf } from "react-icons/fa";
 
 export function Hero() {
@@ -61,7 +61,7 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [api])
   return (
-    <div className="relative h-dvh md:h-[600px] xl:h-[850px] flex-col  flex items-center justify-center">
+    <div className="relative h-[500px]  md:h-[600px] 2xl:h-[850px] flex-col  flex items-center justify-center">
          
    {/* <TopBar />  */}
     
@@ -72,10 +72,9 @@ export function Hero() {
         align: "start",
         loop: true,
       }} orientation="horizontal"     >
-      <CarouselContent className=" h-dvh md:h-[600px] xl:h-[850px]">
+      <CarouselContent className=" h-[500px]   md:h-[600px] 2xl:h-[850px]">
         {Gallery.map((item,index) => (
           <CarouselItem className="relative z-30 p-0" key={item.id}>
-
             <Image
               src={item.src}
               alt={item.alt}
@@ -138,17 +137,29 @@ export function Hero() {
       {/* </div> */}
 
       {/* Content */}
-      <div className="container    mx-auto px-4 relative z-10 text-white">
-        <div className="max-w-2xl h-full   ">
-          <h3 className="text-lg flex font-normal mb-4">
-            <span className="text-lightGreen flex mr-2 items-center  ">
+      <motion.div  
+      variants={
+        {
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 }
+        }
+      }
+      initial={{ x: -100 }} 
+      animate={{ x: 0  }} 
+       transition={{ duration: 1.5 }}
+      className="container    mx-auto px-4 relative z-10 text-white">
+        <div className="md:max-w-2xl max-w-xs h-full   ">
+          <h3 className=" text-sm  md:text-lg items-center flex font-normal mb-4">
+            <div className="text-lightGreen flex mr-2 items-center  relative ">
               {/* <Image src="/leaf.png" width={40} height={40} className="rotate-180" alt="Logo" /> */}
-              <Image src="/leaf.png" width={40} height={40} className="" alt="Logo" />
+              <Image src="/leaf.png" width={30} height={30} className="  " alt="Logo" />
 
-            </span>
-            I-GREEN  LANDSCAPE SOLUTIONS
+            </div>
+            <span className="text-bronze" >
+              I
+              </span>-GREEN  LANDSCAPE SOLUTIONS
           </h3>
-          <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6">Innovating Landscapes with AI and Automation</h1>
+          <h1 className="text-xl md:text-4xl text-white lg:text-5xl tracking-widest leading-relaxed font-bold mb-6">Innovating Landscapes with AI and Automation</h1>
           {/* <p className="text-lg md:text-xl mb-8 opacity-90">
             
           </p> */}
@@ -174,7 +185,7 @@ export function Hero() {
             </Button> */}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* <section className="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
           

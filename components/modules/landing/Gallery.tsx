@@ -76,7 +76,7 @@ export default function Gallery() {
  
    const router = useRouter()
   return (
-    <main className="w-full bg-[#fbfaf6] h-full pb-44 px-4 ">
+    <main className="w-full lg:pb-44 pb-28 px-6 lg:px-4 bg-[#fbfaf6] h-full  ">
  <section className='container pt-12 max-w-7xl mx-auto'>
 
  {/* header */} 
