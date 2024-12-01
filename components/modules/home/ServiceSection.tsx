@@ -102,7 +102,7 @@ export default function ServicesGrid() {
       onMouseLeave={() => setHoveredIndex(null)}
       onClick={() => console.log('clicked')}
     >
-      <Image src={'/tree2.png'} alt={service.title} width={600} height={400} className="absolute rotate-180 -right-64 opacity-25 -top-48" />
+      <Image src={'/tree2.png'} alt={service.title} width={600} height={400} className="absolute rotate-180 -right-36 -top-36  md:-right-64 opacity-25 md:-top-48" />
 
       {hoveredIndex === index && service.image ? (
         <div className="absolute lg:h-full lg:w-full inset-0">
