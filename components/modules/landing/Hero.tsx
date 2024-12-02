@@ -86,10 +86,9 @@ export function Hero() {
 
           </CarouselItem>
         ))}
-
       </CarouselContent>
-      <div className="absolute inset-0  bg-lightGreen/5" />
-
+      <div className="absolute inset-0  bg-lightGreen/5" /> 
+      
       <div className="absolute right-4 top-1/2 flex z-30 -translate-y-1/2 flex-col gap-2">
         {Gallery.map((_, index) => (
           <button

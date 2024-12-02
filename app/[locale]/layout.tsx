@@ -9,15 +9,8 @@ import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import { Sono } from "next/font/google";
 import { Providers } from "@/components/providers/provider";
  
-
-const getSono = Sono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sono',
-})
 
 
 
@@ -69,7 +62,7 @@ export default async function RootLayout(props: {
   return (
     <html lang={locale}>
       <body
-        className={`max-w-[1920px] h-full relative    mx-auto  ${geistSans.variable} ${geistMono.variable} ${getSono.variable} antialiased ${
+        className={`max-w-[1920px] h-full relative  overflow-x-hidden   mx-auto  ${geistSans.variable} ${geistMono.variable} antialiased ${
           locale === "ar" ? "rtl" : "ltr"
         }`}
       >

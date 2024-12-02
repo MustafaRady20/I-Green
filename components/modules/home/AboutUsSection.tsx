@@ -34,7 +34,7 @@ const features = [
 
 export default function AboutUs() {
   return (
-    <main className="   w-full  pb-28 px-6 sm:px-0   md:w-full min-w-screen overflow-hidden h-full ">
+    <main className="   max-w-[1920px]    px-6 sm:px-0   w-full  overflow-x-hidden h-full ">
     <section className="w-full py-16 bg-[#004d40] relative overflow-hidden">
       {/* Futuristic background elements */}
       <div className="absolute inset-0">
@@ -105,6 +105,7 @@ export default function AboutUs() {
         </div>
       </div>
     </section>
+            <div className="absolute w-96 h-96 bg-[#ffd700] rounded-full blur-[128px] -top-48  -right-48 opacity-20" />
     <WhyChooseUs />
     </main>
   )

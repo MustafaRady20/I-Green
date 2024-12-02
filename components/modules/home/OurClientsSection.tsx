@@ -72,7 +72,7 @@ export function ClientLogoCarousel() {
     // Auto-play functionality
     const interval = setInterval(() => {
       api?.scrollNext()
-    }, 3000) // Change slide every 5 seconds
+    }, 2000) // Change slide every 2 seconds
 
     return () => clearInterval(interval)
   }, [api])
@@ -98,13 +98,13 @@ export function ClientLogoCarousel() {
         opts={{
           align: "start",
           loop: true,
- duration: 500,
+//  duration: 300,
         }}
         orientation="horizontal"
         
         className="w-full   mx-auto"
       >
-        <CarouselContent className="-ml-2    md:-ml-4">
+        <CarouselContent className="-ml-2 md:-ml-4">
           {logos.map((logo, index) => (
             <CarouselItem key={index} className="pl-2 md:pl-4  md:basis-1/3 lg:basis-1/4">
               <div className="p-2">

@@ -4,15 +4,15 @@ export default function WhyChooseUs() {
     // bg-gradient-to-r from-[#004d40] to-[#00695c]
     
   return (
-    <section className="w-full py-12  bg-[#004d40] relative overflow-hidden">
+    <section className="max-w-[1920px] py-20   w-full overflow-x-hidden bg-[#004d40] relative overflow-hidden">
       {/* Futuristic background elements */}
-      <div className="absolute inset-0  opacity-90" />
+      <div className="absolute inset-0   opacity-90" />
       <div className="absolute inset-0">
         {/* <div className="absolute w-96 h-96 bg-[#ffd700] rounded-full blur-[128px] -top-48 -right-48 opacity-20" /> */}
-        <div className="absolute w-96 h-96 bg-[#ffd700] rounded-full blur-[128px] -bottom-48 -left-48 opacity-20" />
+        <div className="absolute w-96 h-96 bg-[#ffd700] rounded-full blur-[128px] -bottom-48 -left-48  opacity-20" />
       </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto  px-4 relative">
         <div className="text-center mb-12">
           <span className="text-[#ffd700] font-medium mb-4 inline-block">WHY CHOOSE US</span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-clip-text">
