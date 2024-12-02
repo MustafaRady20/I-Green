@@ -49,8 +49,8 @@ function TestimonialSection() {
     setCurrentSlide(index);
   };
   return (
-    <section className="flex font-['Sono'] flex-col lg:py-0 py-44  h-full lg:flex-row text-[#5E6282] lg:pb-28 pt-[120px] px-6 lg:pt-60 lg:pl-[284px] ">
-      <div className="flex lg:h-[362px]   flex-col h-full  justify-center lg:flex-row w-full lg:gap-28 ">
+    <section className="flex flex-col  pb-28  h-full lg:flex-row bg-[#fbfaf6]  text-[#5E6282]   px-6  lg:pl-[284px] ">
+      <div className="flex lg:h-[362px] py-14   flex-col h-full  justify-center lg:flex-row w-full lg:gap-28 ">
         <div className="flex-1 lg:justify-start mx-auto justify-center items-center lg:min-w-32 lg:items-start">
           <h3 className="text-lg leading-7 lg:text-start text-center font-semibold mb-4">
             Testimonials
@@ -111,17 +111,7 @@ function TestimonialSection() {
                 </p>
               </footer>
             </div>
-            //   <div className="relative lg:w-[606px] lg:bottom-5 ml-auto bg-[#f8f8f8] rounded-lg shadow-lg p-4">
-            //   <div className="flex flex-col justify-end text-[#5E6282] px-11 space-y-[6px]">
-            //     <h3 className="font-semibold text-lg">
-            //       {testimonials[(currentSlide + 1) % testimonials.length].name}
-            //     </h3>
-            //     <p className="text-base font-medium">
-            //       {testimonials[(currentSlide + 1) % testimonials.length].position ||
-            //         testimonials[(currentSlide + 1) % testimonials.length].title}
-            //     </p>
-            //   </div>
-            // </div>
+     
           )}
 
           <div className="absolute  gap-x-6 mt-20 lg:mt-0 justify-center   lg:right-16 w-full lg:w-0 lg:top-1/2 lg:-translate-y-1/2 flex lg:flex-col lg:space-y-12">

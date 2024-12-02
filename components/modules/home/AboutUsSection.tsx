@@ -1,98 +1,111 @@
-import { ImageIcon, Layout, Monitor, ShoppingBag, Star } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+'use client'
+// import { ArrowRight, Leaf, Palette, Shield, TrendingUp, Sparkles, Recycle } from 'lucide-react'
+// import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
-function AboutUsSection() {
+//   // from-[#D8F3DC] via-darkgreen to-deepGreen
+
+//   // color: #99a537;
+//   // background: #233841;
+
+
+
+import { Globe2, Award, Phone, Leaf } from 'lucide-react'
+import WhyChooseUs from "./WhyChooseUs"
+
+const features = [
+  {
+    title: "Most Trusted in the Globe",
+    description: "Choice is untrammelled & when nothing prevents us being able obligations of business it will frequently beguiled by the charms pleasure of the moment.",
+    icon: Globe2,
+  },
+  {
+    title: "Sustainability in Gardening",
+    description: "The charms of pleasure of moment so blinded by desire about creating and maintaining green spaces that are environmentally friendly and supportive of local ecosystems.",
+    icon: Leaf,
+  },
+  {
+    title: "Our Higher Standards",
+    description: "Nothing prevents our being able we like best, every pleasure is to be avoided circumstances.",
+    icon: Award,
+  },
+]
+
+
+export default function AboutUs() {
   return (
-    <section className='lg:px-[289.5px]  font-["Sono"] px-6 text-[#134A55] py-[120px] lg:py-60'>
-      <header className="text-center flex gap-11 flex-col justify-center items-center ">
-        <h1 className="lg:text-6xl font-semibold  text-4xl lg:leading-[72px]">
-          What We do ?
-        </h1>
-        <p className=" text-xl font-normal  leading-[42px]">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-          Duis autem vel eum iriure dolor in hendrerit in vulputate
-        </p>
-      </header>
-      <article className="flex flex-col w-full h-full mt-11">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-row-dense gap-8">
-          <div className="bg-[#FAFAFA] p-6 lg:col-span-1 rounded-lg">
-            <Monitor className="w-6 h-6 mb-4 text-gray-800" />
-            <h3 className="text-lg  mb-3">Web Design</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </p>
-          </div>
+    <main className="   w-full  pb-28 px-6 sm:px-0   md:w-full min-w-screen overflow-hidden h-full ">
+    <section className="w-full py-16 bg-[#004d40] relative overflow-hidden">
+      {/* Futuristic background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTAgMjVsNSA1TDI1IDYwIDAgMzBsNS01IDIwIDIweiIgZmlsbD0iI2ZmZDcwMCIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9zdmc+')] opacity-10" />
+        <div className="absolute w-96 h-96 bg-[#ffd700] rounded-full blur-[128px] -top-48 -right-48 opacity-10" />
+      </div>
 
-          <div className="bg-[#FAFAFA] p-6 lg:col-span-1 rounded-lg">
-            <Star className="w-6 h-6 mb-4 text-gray-800" />
-            <h3 className="text-lg  mb-3">UI/UX Design</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </p>
-          </div>
+      <div className="container mx-auto px-4 relative">
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Left Column */}
+          <div className="lg:w-1/2">
+            <span className="text-[#ffd700] font-medium mb-4 inline-block">ABOUT OUR COMPANY</span>
+            <div className="relative">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
+                Our Passion for Landscaping Excellence
+                <span className="absolute -right-10 top-10 text-[#ffd700]/20 text-7xl font-light">
+                  SINCE 2000
+                </span>
+              </h1>
+            </div>
 
-          <div className="bg-[#FAFAFA] p-6 lg:col-span-1 rounded-lg">
-            <Layout className="w-6 h-6 mb-4 text-gray-800" />
-            <h3 className="text-lg  mb-3">Responsive Design</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </p>
-          </div>
-
-          <div className="bg-[#FAFAFA] lg:col-span-1 lg:row-span-2  p-6 rounded-lg">
-            <ShoppingBag className="w-6 h-6 mb-4 text-gray-800" />
-            <h3 className="text-lg  mb-3">E-commerce Solutions</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </p>
-            <div className="relative w-full h-48 rounded-lg overflow-hidden mt-4">
-              <Image
-                src="/boxes.jpeg"
-                alt="Custom development preview"
-                fill
-                className="object-cover"
-              />
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden mb-8">
+                <Image
+                  src="/pexels-davidmcbee-1546166.jpg?height=400&width=600"
+                  
+                  alt="Landscaping Project"
+                  width={600}
+                  height={400}
+                  className="object-cover"
+                />
+                <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-[#ffd700]/20">
+                  <div className="text-4xl font-bold text-[#ffd700]">1k+</div>
+                  <div className="text-white">Projects Completed Efficiently</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="bg-[#FAFAFA] p-6 flex lg:col-span-2  lg:row-span-1 items-start justify-between w-full  rounded-lg">
-            <div className="flex flex-col space-y-4">
-              <ImageIcon className="w-6 h-6 mb-2 text-gray-800" />
-              <h3 className="text-lg  mb-1">Custom Development</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                From concept to launch, we create stunning, user-centric
-                websites that elevate your brand and engage your audience.
-              </p>
+
+          {/* Right Column */}
+          <div className="lg:w-1/2 space-y-8">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="group p-6 rounded-2xl bg-[#00695c]/50 backdrop-blur-sm border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-[#ffd700]/10 text-[#ffd700]">
+                    <feature.icon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <div className="p-6 rounded-2xl bg-[#ffd700]/10 backdrop-blur-sm border border-[#ffd700]/20">
+              <h3 className="text-xl font-semibold text-white mb-2">Considering a Project?</h3>
+              <p className="text-gray-300 mb-4">Feel free to reach out via message or phone call.</p>
+              <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#ffd700] text-[#004d40] font-medium hover:bg-[#ffd700]/90 transition-colors">
+                <Phone className="w-4 h-4" />
+                Contact Us
+              </button>
             </div>
-            <div className="relative w-1/2  rounded-lg overflow-hidden">
-              <Image
-                src="/boxes.jpeg"
-                alt="Custom development preview"
-                width={200}
-                height={200}
-                className="object-cover w-48 h-48"
-              />
-            </div>
-          </div>
-          <div className="bg-[#FAFAFA] p-6 lg:col-span-1 rounded-lg">
-            <Layout className="w-6 h-6 mb-4 text-gray-800" />
-            <h3 className="text-lg  mb-3">Responsive Design</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </p>
           </div>
         </div>
-      </article>
+      </div>
     </section>
-  );
+    <WhyChooseUs />
+    </main>
+  )
 }
-
-export default AboutUsSection;

@@ -1,199 +1,125 @@
-import Image from "next/image";
-import React from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+'use client'
 
-interface Client {
-  id: number;
-  name: string;
-  image: string;
-}
-const clients = [
-  {
-    id: 1,
-    name: "Mike Taylor",
-    image: "src/Frame 1597884294.png",
-  },
-  {
-    id: 2,
-    name: "Chris Thoma ",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 3,
-    name: "Client 3",
+import * as React from "react"
+import useEmblaCarousel from "embla-carousel-react"
+import { useEffect } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  // CarouselNext,
+  // CarouselPrevious,
+} from "@/components/ui/carousel"
+import Image from "next/image"
+import { useAnimation, useInView } from "framer-motion"
+import { motion } from "framer-motion"
+const logos = [
+  { src: "/Pepsi_2023.webp?height=80&width=160", alt: "Webflow" },
+  { src: "/Pepsi_2023.webp?height=80&width=160", alt: "Relume" },
+  { src: "/Pepsi_2023.webp?height=80&width=160", alt: "Webflow" },
+  { src: "/Pepsi_2023.webp?height=80&width=160", alt: "Relume" },
+  { src: "/Pepsi_2023.webp?height=80&width=160", alt: "Webflow" },
+  { src: "/Pepsi_2023.webp?height=80&width=160", alt: "Relume" },
+]
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 4,
-    name: "Client 4",
+export function ClientLogoCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" })
+  const controls = useAnimation()
+  const ref = React.useRef(null)
+  const inView = useInView(ref)
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 5,
-    name: "Client 5",
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    }
+  }, [controls, inView])
+  useEffect(() => {
+    if (emblaApi) {
+      let animationId: number
+      
+      const autoScroll = () => {
+        emblaApi.scrollNext()
+        animationId = requestAnimationFrame(autoScroll)
+      }
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 6,
-    name: "Client 6",
+      animationId = requestAnimationFrame(autoScroll)
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 7,
-    name: "Client 7",
+      return () => {
+        cancelAnimationFrame(animationId)
+      }
+    }
+  }, [emblaApi])
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 8,
-    name: "Client 8",
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 9,
-    name: "Client 9",
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 10,
-    name: "Client 10",
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 11,
-    name: "Client 11",
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 12,
-    name: "Client 12",
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 13,
-    name: "Client 13",
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
+  React.useEffect(() => {
+    // Auto-play functionality
+    const interval = setInterval(() => {
+      api?.scrollNext()
+    }, 3000) // Change slide every 5 seconds
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 14,
-    name: "Client 14",
+    return () => clearInterval(interval)
+  }, [api])
 
-    image: "/placeholder.svg",
-  },
-  {
-    id: 15,
-    name: "Client 15",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 16,
-    name: "Client 16",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 17,
-    name: "Client 17",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 18,
-    name: "Client 18",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 19,
-    name: "Client 19",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 20,
-    name: "Client 20",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 21,
-    name: "Client 21",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 22,
-    name: "Client 22",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 23,
-    name: "Client 23",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 24,
-    name: "Client 24",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 25,
-    name: "Client 25",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 26,
-    name: "Client 26",
-
-    image: "/placeholder.svg",
-  },
-  {
-    id: 27,
-    name: "Client 27",
-
-    image: "/placeholder.svg",
-  },
-];
-function OurClientsSection() {
   return (
-    <section className="lg:h-[472px]   text-[#134A55] flex flex-col items-center lg:gap-y-11 gap-[62px] px-6 lg:px-[120px]  font-['Sono'] w-full relative   ">
-      <header className="text-center   flex flex-col justify-center items-center ">
-        <h2 className="lg:text-6xl text-4xl  font-medium  lg:leading-[72px]">
-          our amazing clients{" "}
-        </h2>
-      </header>
-      <article className="h-full grid grid-cols-4  justify-center items-center px-6 lg:grid-cols-7 gap-2  md:gap-4 lg:px-16 w-full">
-        {clients.map((client: Client) => (
-          <div
-            key={client.id}
-            className="flex justify-center items-center size-20"
-          >
-            <Image
-              alt={client.name}
-              src={"/image 13.png"}
-              width={1920}
-              height={1080}
-              className="object-center object-contain size-full"
-            />
-          </div>
-        ))}
-      </article>
-    </section>
-  );
-}
+    <main className="w-full  px-6 sm:px-0   md:w-full min-w-screen overflow-hidden h-full ">
+    <div className="w-full py-16  ">
+      <div className="text-center mb-12">
+      <motion.h2 
+          className="text-3xl font-bold text-center mb-12 bg-clip-text text-deepGreen bg-gradient-to-r from-yellow-400 to-yellow-600"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Trusted by Industry Pioneers
+        </motion.h2>
 
-export default OurClientsSection;
+        {/* <h2 className="text-2xl font-semibold">Trusted by Industry Leaders Worldwide</h2> */}
+      </div>
+      <Carousel
+       setApi={setApi}
+        ref={emblaRef}
+        opts={{
+          align: "start",
+          loop: true,
+ duration: 500,
+        }}
+        orientation="horizontal"
+        
+        className="w-full   mx-auto"
+      >
+        <CarouselContent className="-ml-2    md:-ml-4">
+          {logos.map((logo, index) => (
+            <CarouselItem key={index} className="pl-2 md:pl-4  md:basis-1/3 lg:basis-1/4">
+              <div className="p-2">
+                <div className="size-36 relative ">
+                  <div className="flex   items-center justify-center transition-shadow duration-300 p-4">
+                    <Image width={100} height={100}  src={logo.src} alt={logo.alt} className="  size-full flex items-center justify-center object-center object-cover " />
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+     
+    </div>
+    </main>
+  )
+}

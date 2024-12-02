@@ -1,5 +1,9 @@
 
+import AboutUs from "@/components/modules/home/AboutUsSection";
+import { ClientLogoCarousel } from "@/components/modules/home/OurClientsSection";
 import ServicesGrid from "@/components/modules/home/ServiceSection";
+// import TestimonialSection from "@/components/modules/home/TestimonialSection";
+// import WhyChooseUs from "@/components/modules/home/WhyChooseUs";
 import Gallery from "@/components/modules/landing/Gallery";
 import { Hero } from "@/components/modules/landing/Hero";
 import Stats from "@/components/modules/landing/Stats";
@@ -15,6 +19,26 @@ export default function HomePage() {
        <Stats />
        <ServicesGrid />
        <Gallery />
+       <AboutUs />
+       {/* <WhyChooseUs /> */}
+       {/* <TestimonialSection /> */}
+       <ClientLogoCarousel />
+
     </main>
   );
 }
+
+
+// @keyframes scroll {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(-50%);
+//   }
+// }
+
+// .animate-scroll {
+//   animation: scroll 30s linear infinite;
+// }
+
