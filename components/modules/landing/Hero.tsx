@@ -164,15 +164,16 @@ export function Hero() {
           </p> */}
           <div className="flex flex-wrap gap-4">
             <Button
-              size="sm"
-              className="bg-Gold border border-Gold/50 hover:bg-darkgreen hover:text-white transition-colors delay-150   text-darkgreen   rounded-lg  font-medium"
+              size="default"
+              className="bg-Gold group  border border-Gold/50 hover:bg-darkgreen hover:text-white transition-colors    text-darkgreen   rounded-lg  font-medium"
               asChild
-            >
-              <span className="flex text-deepGreen hover:text-white justify-center items-center" >
+            > 
+              <span className="flex   text-deepGreen hover:text-white justify-center items-center" >
               <LeafIcon size={30}  className="    mr-2" />
-              <Link className="   text-lg " href="/estimate">Read more</Link>
+              <Link className="  relative text-lg " href="/estimate">Read more</Link>
+
               </span>
-             
+
             </Button>
             {/* <Button
               size="lg"

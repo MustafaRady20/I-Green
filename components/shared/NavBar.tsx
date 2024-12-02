@@ -91,7 +91,7 @@ function NavBar() {
           Get Quote
         </Button> */}
 
-          <Button className="text-[#013220] border hidden lg:flex   hover:bg-Gold border-yellow-500 bg-Gold hover:text-white rounded-lg font-medium">
+          <Button size={"lg"} className="text-[#013220] border hidden lg:flex   hover:bg-Gold border-yellow-500 bg-Gold hover:text-white rounded-lg font-medium">
             <LeafIcon className="w-4 h-4 mr-2 " />
             GET YOUR QUOTE
           </Button>
