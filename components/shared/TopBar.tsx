@@ -3,7 +3,7 @@ import {  Clock, MapPin } from 'lucide-react'
 export function TopBar() {
   // bg-gradient-to-r from-[#95ab47]  to-darkgreen
   return (
-<div className="w-full     bg-[#004d40]  hidden lg:flex z-20 absolute top-0   text-sm  lg:h-10  text-white py-2 px-4">
+<div className="w-full     bg-gradient-to-r from-[#013220]  to-[#08312d]  hidden lg:flex z-20 absolute top-0   text-sm  lg:h-10  text-white py-2 px-4">
    {/* <div className="absolute inset-0 bg-black/25"/> */}
 <div className="container z-10 mx-auto flex justify-between items-center text-sm">
       <div className="flex items-center gap-2">

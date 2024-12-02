@@ -9,7 +9,7 @@ function FooterSection() {
   return (
    
 
-<footer className="w-full  text-lightGreen  mx-auto px-4 py-8  bg-gradient-to-r from-[#004d40]  to-[#00695c]  relative overflow-hidden">
+<footer className="w-full  text-lightGreen  mx-auto px-4 py-8  bg-gradient-to-r from-[#013220]  to-[#123a36]  relative overflow-hidden">
 {/* Background Decorative Leaves */}
 <div className="absolute right-52 -bottom-10 opacity-10">
   <Image src="/tree3.png" width={800} height={600} className=" h-full w-full " alt="Logo" />

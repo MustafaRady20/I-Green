@@ -61,7 +61,7 @@ function NavBar() {
      className={`
            transition-all     absolute  mx-auto     lg:top-10 ease-linear  duration-150 w-full -top-2 z-50  isolate bg-clip-padding h-36 lg:px-4 py-2 2xl:py-4`}
       >
-        <div className={`mx-auto bg-[#004d40]  text-white   font-serif transition-colors w-full  flex  2xl:max-w-5xl lg:max-w-4xl py-2 lg:px-8  px-10 2xl:px-12  lg:rounded-3xl   items-center justify-between`}>
+        <div className={`mx-auto bg-[#013220]  text-white   font-serif transition-colors w-full  flex  2xl:max-w-5xl lg:max-w-4xl py-2 lg:px-8  px-10 2xl:px-12  lg:rounded-3xl   items-center justify-between`}>
           <Link className="lg:flex items-center hidden   justify-center" href="#">
             <Image src="/logo.png" className=" " alt="Logo" width={100} height={100} />
 

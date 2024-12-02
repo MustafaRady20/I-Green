@@ -125,11 +125,11 @@ export default function ServicesGrid() {
           <div className="mb-6 z-10">
             <service.icon className="w-12 h-12 text-[#65a30d]" />
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center  gap-2 mb-2">
             <span className="w-5 h-0.5 bg-primary" />
-            <h3 className="text-lg font-semibold">{service.title}</h3>
+            <h3 className=" text-base sm:text-lg font-semibold">{service.title}</h3>
           </div>
-          <p className="text-darkgray mb-4">{service.description}</p>
+          <p className="text-darkgray text-sm sm:text-base  ml-1 mb-4">{service.description}</p>
           <button className="hover:underline inline-flex items-center gap-2">
             VIEW MORE DETAILS
             <ArrowRight className="h-4 w-4" />
@@ -154,7 +154,7 @@ export default function ServicesGrid() {
   
   }) => (
     <button
-      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#fbfaf6] rounded-full p-[6px] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+      className="absolute -left-0 top-[37%] sm:top-1/2 -translate-y-1/2 z-10 bg-[#fbfaf6] rounded-full p-[6px] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
       onClick={onClick}
       disabled={!enabled}
     >
@@ -167,7 +167,7 @@ export default function ServicesGrid() {
     onClick: () => void
   }) => (
     <button
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#fbfaf6] rounded-full p-[6px] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+      className="absolute -right-0 top-[37%] sm:top-1/2 -translate-y-1/2 z-10 bg-[#fbfaf6] rounded-full p-[6px] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
       onClick={onClick}
       disabled={!enabled}
     >
@@ -240,7 +240,7 @@ export default function ServicesGrid() {
 
         {/* mobile */}
         {isMobile ? (
-          <div className="overflow-hidden relative   " ref={emblaRef}>
+          <div className="overflow-hidden h-full w-full relative   " ref={emblaRef}>
             <div className="flex">
               {services.map((service, index) => (
                 <div key={service.title} className="flex-[0_0_100%] min-w-0 pl-4 first:pl-0">

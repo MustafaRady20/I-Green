@@ -154,9 +154,7 @@ export function Hero() {
               <Image src="/leaf.png" width={30} height={30} className="  " alt="Logo" />
 
             </div>
-            <span className="text-bronze" >
-              I
-              </span>-GREEN  LANDSCAPE SOLUTIONS
+              I-GREEN  LANDSCAPE SOLUTIONS
           </h3>
           <h1 className="text-xl md:text-4xl text-white lg:text-5xl tracking-widest leading-relaxed font-bold mb-6">Innovating Landscapes with AI and Automation</h1>
           {/* <p className="text-lg md:text-xl mb-8 opacity-90">
