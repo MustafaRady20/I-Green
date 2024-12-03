@@ -25,7 +25,6 @@ export default function HomePage() {
        {/* <TestimonialSection /> */}
        <ClientLogoCarousel />
        <ContactUsSection />
-        
     </main>
   );
 }

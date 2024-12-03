@@ -1,36 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
-
-
-
 import { Hero } from '@/components/modules/services/HeroService';
 import { ServiceContent } from '@/components/modules/services/ServiceContent';
 // import { ServiceContent } from '@/components/modules/services/ServiceContent'
 import { Sidebar } from '@/components/modules/services/SideBarService';
 // import { Link } from '@/i18n/routing';
-import React from 'react'
-
-
-// const services = [
-//   { id: 'gardens', title: 'Gardens' },
-//   { id: 'urban', title: 'Urban' },
-//   { id: 'maintenance', title: 'Maintenance' },
-//   { id: 'events', title: 'Events' }
-// ];
-
-
-
-// export async function generateStaticParams() {
-//   // Replace with your projects' IDs
-
-//   const paths = services.map((service) => ({
-//     params: { id: service.id },
-//   }));
-
-//   return { paths, fallback: false }; // 404 for undefined project IDs
-// }
-
-
+import React from 'react';
+ 
 function  page() {
   return (
     <div className="h-full bg-[#fbfaf6] overflow-hidden flex flex-col w-full">

@@ -25,7 +25,6 @@ export function Hero() {
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-r w-full from-black/40 to-black/10" />
-
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
