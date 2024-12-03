@@ -1,3 +1,4 @@
+ "use client";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -5,23 +6,36 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { LeafIcon } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col w-full min-h-screen">
       {/* Hero Section */}
-      <div className="relative h-[550px] w-full">
+      <div className="relative h-[500px] w-full">
         <div className="absolute inset-0">
           <Image
             layout="fill"
             src="/hero.jpg"
             alt="Plant terrarium on desk"
-            className="w-full h-full object-cover brightness-50"
+            className="w-full h-full object-cover object-center"
           />
         </div>
-        <div className="relative h-full flex items-center px-6 lg:px-8">
+        {/* <div className="relative justify-center  h-[85%] max-w-6xl w-full flex items-end  px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-white">Contact-us</h1>
-        </div>
+        </div> */}
+        <div className="absolute inset-0 bg-gradient-to-r w-full from-black/40 to-black/10" />
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative  flex flex-col justify-end h-[85%] px-16 max-w-6xl mx-auto"
+      >
+        <h1 className="text-6xl font-bold text-white mb-6 tracking-tight">
+        Contact-us
+        </h1>
+        
+      </motion.div>
       </div>
 
       {/* Main Content */}
@@ -80,8 +94,9 @@ export default function ContactPage() {
                 </Button> */}
 
                 <Button
-              size="sm"
-              className="bg-deepGreen w-auto border border-Gold/50 hover:bg-Gold hover:text-white transition-colors delay-150   text-white   rounded-lg  font-medium"
+              size="lg"
+              type="submit"
+              className="w-full bg-darkgreen hover:bg-darkgreen/90 text-white py-3 px-6 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] font-medium"
               asChild
             >
               <span className="flex text-deepGreen  cursor-pointer hover:text-white justify-center items-center" >
@@ -90,6 +105,8 @@ export default function ContactPage() {
               </span>
              
             </Button>
+
+          
               </form>
             </div>
 

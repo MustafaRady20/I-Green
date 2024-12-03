@@ -75,7 +75,7 @@ function NavBar() {
             <Link className="hover:text-[#D4AF37] " href="/about">
               About
             </Link>
-            <Link className=" hover:text-[#D4AF37]" href="/services">
+            <Link className=" hover:text-[#D4AF37]" href="/services/gardens">
               Services
             </Link>
             <Link className=" hover:text-[#D4AF37]" href="/gallery">

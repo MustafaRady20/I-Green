@@ -22,7 +22,6 @@ export default function HomePage() {
        <Gallery />
        <AboutUs />
        {/* <WhyChooseUs /> */}
-        
        {/* <TestimonialSection /> */}
        <ClientLogoCarousel />
        <ContactUsSection />

@@ -20,78 +20,6 @@ interface Work {
   size: Size; // Use the defined Size type here
 }
 // Sample gallery data - replace with your actual images
-const galleryImages = [
-  {
-    id: 1,
-    src: "/potflower.jpg?height=600&width=800",
-    alt: "Modern terraced building with gardens",
-    width: 800,
-    height: 600,
-    className: "col-span-2 row-span-2"
-  },
-  {
-    id: 2,
-    src: "/potflower.jpg?height=400&width=300",
-    alt: "Yellow flower in pot",
-    width: 300,
-    height: 400,
-    className: "col-span-2 row-span-2"
-
-  },
-  {
-    id: 3,
-    src: "/potflower.jpg?height=400&width=600",
-    alt: "Japanese temple garden",
-    width: 600,
-    height: 400,
-    className: "col-span-2"
-  },
-  {
-    id: 4,
-    src: "/potflower.jpg?height=300&width=400",
-    alt: "Residential landscaping",
-    width: 400,
-    height: 300,
-  },
-  {
-    id: 5,
-    src: "/potflower.jpg?height=500&width=800",
-    alt: "Garden pathway",
-    width: 800,
-    height: 500,
-    className: "col-span-2"
-  },
-  {
-    id: 6,
-    src: "/potflower.jpg?height=400&width=300",
-    alt: "Hobbit garden house",
-    width: 300,
-    height: 400,
-  },
-  {
-    id: 7,
-    src: "/potflower.jpg?height=400&width=600",
-    alt: "Purple lupine flowers",
-    width: 600,
-    height: 400,
-    className: "col-span-4"
-  },
-  {
-    id: 8,
-    src: "/potflower.jpg?height=600&width=400",
-    alt: "Cacti garden",
-    width: 400,
-    height: 600,
-  },
-  {
-    id: 9,
-    src: "/potflower.jpg?height=500&width=800",
-    alt: "Large tree with sunset",
-    width: 800,
-    height: 500,
-    className: "col-span-1"
-  },
-]
 
 
 
@@ -234,8 +162,8 @@ export default function GalleryPage() {
           {selectedImage && (
             <div className="relative  min-w-max min-h-96  lg:h-[700px] overflow-hidden rounded-lg">
               <Image
-                src={galleryImages.find(img => img.id === selectedImage)?.src || ''}
-                alt={galleryImages.find(img => img.id === selectedImage)?.alt || ''}
+                src={works.find(img => img.id === selectedImage)?.image || ''}
+                alt={works.find(img => img.id === selectedImage)?.title || ''}
                  layout="fill"
                 className="object-contain object-center w-full h-full"
               />
