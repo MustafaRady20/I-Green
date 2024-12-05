@@ -78,7 +78,7 @@ export function ClientLogoCarousel() {
   }, [api])
 
   return (
-    <main className="w-full  px-6 sm:px-0   md:w-full min-w-screen overflow-hidden h-full ">
+    <main className="w-full  px-0 sm:px-0   md:w-full min-w-screen overflow-hidden h-full ">
     <div className="w-full py-16  ">
       <div className="text-center mb-12">
       <motion.h2 
