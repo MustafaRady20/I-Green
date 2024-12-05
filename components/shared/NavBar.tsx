@@ -140,12 +140,13 @@ const toggleMenu = () => {
             <LeafIcon className="w-4 h-4 mr-2 " />
             GET YOUR QUOTE
           </Button>
-          <div className="lg:hidden flex items-center gap-2">
+          <Link              href="/"
+ className="lg:hidden flex items-center gap-2">
             <Image src="/logo.png" alt="Logo" width={40} height={40} />
             <h1 className="text-xl font-bold  leading-loose tracking-widest">
             I-GREEN
             </h1>
-          </div>
+          </Link>
           {/* Mobile Menu Button */}
           <button className="lg:hidden" onClick={toggleMenu}>
             <Menu size={30} />
@@ -163,7 +164,7 @@ const toggleMenu = () => {
               className="fixed top-0 h-full overflow-y-hidden no-scroll   right-0 overflow-hidden w-full bg-[#fbfaf6] shadow-lg flex flex-col justify-around py-12 px-6 z-50"
             >
               <header className="flex justify-between w-full">
-                <Link  href="/">
+                <Link  onClick={toggleMenu}  href="/">
                   <Image src="/logo.png" alt="Logo" width={100} height={100} />
                 </Link>
                 <button onClick={toggleMenu}>

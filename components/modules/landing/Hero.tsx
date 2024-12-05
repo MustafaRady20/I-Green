@@ -66,14 +66,14 @@ export function Hero() {
       // initial={{ x: -100, opacity: 0 }}
       // animate={{ x: 0, opacity: 1 }}
       // transition={{ duration: 1 }} 
-      className="relative h-[500px] bg-[#004d40]  md:h-[600px] 2xl:h-screen flex-col  flex items-center justify-center">
+      className="relative h-[600px] bg-[#004d40]   2xl:h-screen flex-col  flex items-center justify-center">
       <Carousel setApi={setApi}
         className="absolute  inset-0 h-full w-full"
         opts={{
           align: "start",
           loop: true,
         }} orientation="horizontal"     >
-        <CarouselContent className=" h-[500px] md:h-[600px] 2xl:h-screen">
+        <CarouselContent className=" h-[600px]  2xl:h-screen">
           {Gallery.map((item, index) => (
             <CarouselItem className="relative z-30 p-0" key={item.id}>
               <Image
