@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Leaf, FlowerIcon, Trees, TreesIcon as Plant, Scissors, Sprout, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from "next/image"
 import useEmblaCarousel from "embla-carousel-react"
-import { useRouter } from "@/i18n/routing"
+import { Link, useRouter } from "@/i18n/routing"
 import { ServiceGridTypes } from "@/types/types"
 import { servicesGrid } from "@/data/constants"
 
@@ -42,13 +42,14 @@ export default function ServicesGrid() {
     service: ServiceGridTypes
     index: number
   }) => (
+    <Link href={`/services/${service.id}`}>
     <Card
       key={service.title}
       className="relative overflow-hidden border w-full h-72 lg:w-full lg:h-full rounded-lg cursor-pointer hover:shadow-lg transition-opacity duration-200"
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
-      onClick={() => router.push(`/services/${service.id}`)
-    }
+      // onClick={() => router.push(`/services/${service.id}`)
+    // }
     >
       <Image src={'/tree2.png'} alt={service.title} width={600} height={400} className="absolute rotate-180 -right-56 md:-right-64 -top-48 opacity-10  sm:opacity-25 md:-top-48" />
 
@@ -85,6 +86,7 @@ export default function ServicesGrid() {
         </div>
       )}
     </Card>
+    </Link>
   )
   useEffect(() => {
     const checkMobile = () => {
@@ -127,7 +129,9 @@ export default function ServicesGrid() {
       <div className="container mx-auto max-w-7xl">
         <div className="flex justify-around md:justify-between w-full md:w-[95%] items-center mb-12">
           <h2 className="md:text-3xl text-base font-semibold text-darkgreen">Tailored Landscape Services</h2>
-          <button className="text-darkgreen text-sm md:text-base  hover:text-[#65a30d] hover:animate-pulse hover:underline inline-flex items-center gap-2 font-medium">
+          <button onClick={
+            () => router.push('/services/gardens')
+          } className="text-darkgreen text-sm md:text-base  hover:text-[#65a30d] hover:animate-pulse hover:underline inline-flex items-center gap-2 font-medium">
             VIEW MORE SERVICES
             <ArrowRight className="h-4 w-4" />
           </button>

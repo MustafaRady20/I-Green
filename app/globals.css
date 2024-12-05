@@ -130,7 +130,11 @@
     }
   }
 }
-
+ 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
 
 /* Custom Scrollbar Styles */
 ::-webkit-scrollbar {

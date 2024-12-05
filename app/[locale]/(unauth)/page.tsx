@@ -15,31 +15,15 @@ export default function HomePage() {
 
 
   return (
-    <main className="max-w-[1920px]   md:w-full min-w-screen overflow-hidden h-full ">
-      <Hero />
+    <main className="max-w-[1920px]   md:w-full w-full overflow-hidden h-full ">
+       <Hero />
        <Stats />
        <ServicesGrid />
        <Gallery />
        <AboutUs />
-       {/* <WhyChooseUs /> */}
-       {/* <TestimonialSection /> */}
        <ClientLogoCarousel />
        <ContactUsSection />
     </main>
   );
 }
-
-
-// @keyframes scroll {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(-50%);
-//   }
-// }
-
-// .animate-scroll {
-//   animation: scroll 30s linear infinite;
-// }
 

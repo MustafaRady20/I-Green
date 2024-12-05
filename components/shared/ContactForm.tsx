@@ -1,4 +1,5 @@
 'use client';
+import { useToast } from '@/hooks/use-toast';
 import React, { useState } from 'react';
 // import { MapPin, Phone, Mail } from 'lucide-react';
 
@@ -11,6 +12,36 @@ type FormData = {
 };
 
 export default function ContactForm() {
+
+  const { toast } = useToast()
+  const [loading, setLoading] = useState(false);
+
+  async function sendMessageToTelegram(message: string) {
+    setLoading(true);
+    const response = await fetch("/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: new URLSearchParams({ message: message }).toString(),
+    });
+    const data = await response.json();
+    if (data.success) {
+      setLoading(false);
+      toast({
+        title: "Message sent successfully",
+        description: "We'll get back to you soon",
+        variant: "default",
+      })
+    } else {
+      setLoading(false);
+      toast({ 
+        title: "Failed to send message",
+        description: "Please try again later",
+        variant: "destructive",
+      })
+    }
+  }
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -23,6 +54,8 @@ export default function ContactForm() {
     e.preventDefault();
     // Handle form submission
     console.log(formData);
+    sendMessageToTelegram(JSON.stringify(formData));
+     
   };
 
   return (
@@ -78,6 +111,7 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
+        disabled={loading || !formData.name || !formData.email || !formData.phone || !formData.message}
         className="w-full bg-darkgreen hover:bg-darkgreen/90 text-white py-3 px-6 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] font-medium"
       >
         Send Message

@@ -40,7 +40,7 @@ export default async function RootLayout(props: {
   return (
     <html lang={locale}>
       <body
-        className={`max-w-[1920px] overflow-x-hidden h-full relative font-serif  bg-[#FFFFFF]   mx-auto  ${locale === "ar" ? "rtl" : "ltr"
+        className={` w-full max-w-[1920px] overflow-x-hidden h-full relative font-serif  bg-[#FFFFFF]   mx-auto  ${locale === "ar" ? "rtl" : "ltr"
           }`}
       >
         {/* <Providers> */}

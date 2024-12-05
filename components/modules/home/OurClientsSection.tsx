@@ -96,8 +96,11 @@ export function ClientLogoCarousel() {
        setApi={setApi}
         ref={emblaRef}
         opts={{
-          align: "start",
+          align: "center",
           loop: true,
+          axis: "x",
+          containScroll: "trimSnaps",
+           
 //  duration: 300,
         }}
         orientation="horizontal"
@@ -106,7 +109,7 @@ export function ClientLogoCarousel() {
       >
         <CarouselContent className="-ml-2 md:-ml-4">
           {logos.map((logo, index) => (
-            <CarouselItem key={index} className="pl-2 md:pl-4  md:basis-1/3 lg:basis-1/4">
+            <CarouselItem key={index} className="pl-2 md:pl-4 basis-auto  md:basis-1/3 lg:basis-1/4">
               <div className="p-2">
                 <div className="size-36 relative ">
                   <div className="flex   items-center justify-center transition-shadow duration-300 p-4">
