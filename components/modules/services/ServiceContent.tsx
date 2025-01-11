@@ -23,6 +23,8 @@ const content = {
 
 export function ServiceContent( ) {
 
+  
+
   // const params = useParams();
 
   
@@ -92,37 +94,14 @@ export function ServiceContent( ) {
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2 text-[var(--neon-blue)]">Holographic Preview</h3>
         <div className="relative w-full max-w-2xl aspect-video">
-          {/* <video
-            autoPlay
-            loop 
-            muted
-            playsInline
-            width={1920}
-            height={1080}
-
-            controls 
-            className="w-full h-full object-cover rounded-lg"
-             src='/Royalty Stock Footage And Video Footage2.mp4'
-            poster="/pexels-q-l-1447393640-29512043.jpg"
-          >
-            <source src={'/Royalty Stock Footage And Video Footage2.mp4'} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video> */}
           <video
-      className={` absolute inset-0 h-full w-full object-cover `}
-      autoPlay
-      muted
-      loop
-      playsInline
-  poster='/pexels-q-l-1447393640-29512043.jpg'
-      preload="auto"
-    >
-      <source
-        src="/Royalty Stock Footage And Video Footage2.mp4"
-        type="video/mp4"
-      />{" "}
-      Your browser does not support the video tag.
-    </video>
+            src={content.videoUrl}
+            className="w-full h-full object-cover rounded-lg"
+            controls
+            autoPlay
+            loop
+            muted
+          ></video>
           {/* <div className="absolute inset-0 bg-gradient-to-r from-datext-darkgreen via-[var(--neon-blue)] to-[var(--neon-purple)] opacity-20 rounded-lg"></div> */}
         </div>
       </div>

@@ -60,8 +60,7 @@ export default function SideNav({
   services,
   selectedService,
   selectedSubservice,
-  // onServiceSelect,
-  // onSubserviceSelect,
+  
 }: SideNavProps) {
   return (
     <nav className="w-full md:w-64 mb-8 md:mb-0 md:mr-8">
