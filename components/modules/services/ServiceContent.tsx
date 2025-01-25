@@ -1,127 +1,114 @@
-'use client'
-import React from 'react';
-// import { motion } from 'framer-motion';
-import Image from 'next/image';
-// import { cn } from '@/components/utils/cn';
-// import { serviceContents, works } from '@/data/constants';
-// import { useParams } from 'next/navigation';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
 
+// External data for each section (cover images and titles)
+const sections = [
+  {
+    coverImage: "/pexels-q-l-1447393640-29512043.jpg",
+    title: "Section 1: Futuristic Design",
+  },
+  {
+    coverImage: "/pexels-q-l-1447393640-29512043.jpg",
+    title: "Section 2: Eco-Friendly Tech",
+  },
+  {
+    coverImage: "/pexels-q-l-1447393640-29512043.jpg",
+    title: "Section 3: AI-Driven Solutions",
+  },
+  {
+    coverImage: "/pexels-q-l-1447393640-29512043.jpg",
+    title: "Section 4: Sustainable Landscapes",
+  },
+];
 
-// interface ServiceContentProps {
-//   serviceId: string;
-// }
 const content = {
-  title: `FutureScape Services`,
   description: `Our cutting-edge sfd technology for $sd is designed to revolutionize your outdoor spaces. We utilize advanced eco-friendly nanotech and AI-driven solutions to create sustainable, self-maintaining landscapes of the future.`,
-  videoUrl: 'https://www.example.com/futuristic-landscape-video.mp4',
+  videoUrl: "https://www.example.com/futuristic-landscape-video.mp4",
   galleryImages: [
-    '/futuristic-landscape-1.jpg',
-    '/futuristic-landscape-2.jpg',
-    '/futuristic-landscape-3.jpg',
+    "/futuristic-landscape-1.jpg",
+    "/futuristic-landscape-2.jpg",
+    "/futuristic-landscape-3.jpg",
+    "/futuristic-landscape-4.jpg",
   ],
-}
+};
 
-export function ServiceContent( ) {
+export function ServiceContent() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  
+  const handleClick = (index: number) => {
+    setExpandedIndex(index);
+  };
 
-  // const params = useParams();
+  const handleClose = () => {
+    setExpandedIndex(null);
+  };
 
-  
-  // const content = serviceContents[params.id as keyof typeof serviceContents];
-  // if (!content) {
-  //   return null;
-  // }
   return (
-    // <div className="flex-1 p-12 ">
-    //   <motion.div
-    //     initial={{ opacity: 0, y: 20 }}
-    //     animate={{ opacity: 1, y: 0 }}
-    //     transition={{ duration: 0.5 }}
-    //     className="max-w-4xl"
-    //   >
-    //     <h1 className="text-4xl font-semibold text-darkgreen mb-8">{content.title}</h1>
-    //     <div className="space-y-6">
-    //       {content.content.map((paragraph, index) => (
-    //         <p key={index} className="text-gray-600 leading-relaxed">
-    //           {paragraph}
-    //         </p>
-    //       ))}
-    //     </div>
-
-    //     <div className="mt-16">
-    //       <h2 className="text-3xl font-semibold text-darkgreen mb-8">Works</h2>
-    //       <div className="grid grid-cols-1   w-full h-full  gap-6  lg:grid-cols-2 " style={
-    //         {
-    //           // gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-    //           // gridAutoRows: "200px"
-
-    //         }
-
-    //       }>
-    //         {works.map((image) => (
-    //           <div
-    //             key={image.id}
-    //             className={cn(
-
-    //               "group relative cursor-pointer  overflow-hidden rounded-lg  transition-all hover:opacity-90",
-    //               // sizeStyle[image.size]
-    //             )}
-    //           // onClick={() => setSelectedImage(image.id)}
-    //           >
-    //             <Image
-    //               src={image.image}
-    //               alt={image.title}
-    //               width={1920}
-    //               height={1080}
-    //               className={`object-cover   transition-transform duration-300 group-hover:scale-105 object-center w-full h-full `}
-    //             />
-    //             {/* // className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" */}
-
-    //             <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    //             <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-    //               <span className="text-white text-sm font-medium">View Image</span>
-    //             </div>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </motion.div>
-    // </div>
-    <div className="flex-1  p-6 rounded-lg neon-border">
-      <h2 className="text-3xl font-bold mb-4 text-darkgreen neon-text">{content.title}</h2>
-      <p className="mb-6 text-darkgreen">{content.description}</p>
-      <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-2 text-[var(--neon-blue)]">Holographic Preview</h3>
-        <div className="relative w-full max-w-2xl aspect-video">
-          <video
-            src={content.videoUrl}
-            className="w-full h-full object-cover rounded-lg"
-            controls
-            autoPlay
-            loop
-            muted
-          ></video>
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-datext-darkgreen via-[var(--neon-blue)] to-[var(--neon-purple)] opacity-20 rounded-lg"></div> */}
-        </div>
-      </div>
-      <div>
-        <h3 className="text-xl font-semibold mb-2 text-[var(--neon-purple)]">Quantum Gallery</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {content.galleryImages.map((src, index) => (
-            <div key={index} className="relative group">
-              <Image
-           src={ '/pexels-q-l-1447393640-29512043.jpg'}
-           alt={`Gallery Image ${index + 1}`}
-                width={300}
-                height={200}
-                className="rounded-lg transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-datext-darkgreen via-[var(--neon-blue)] to-[var(--neon-purple)] opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg"></div>
+    <div className="flex h-screen p-4 gap-4">
+      {sections.map((section, index) => (
+        <div
+          key={index}
+          className={`relative transition-all duration-300 ease-in-out cursor-pointer ${
+            expandedIndex === index
+              ? "w-full" // Expanded section takes 100% of the screen
+              : expandedIndex === null
+              ? "w-[25%]" // Collapsed sections take equal width (25% for 4 sections)
+              : "hidden" // Hide other sections when one is expanded
+          }`}
+          onClick={() => handleClick(index)}
+        >
+          <div className="h-full overflow-hidden rounded-lg shadow-lg">
+            {/* Cover Image */}
+            <Image
+              src={section.coverImage}
+              alt={`Cover Image ${index + 1}`}
+              fill
+              className="object-cover"
+            />
+            {/* Section Title */}
+            <div className="absolute inset-0 flex items-end p-4 bg-black bg-opacity-40">
+              <h2 className="text-2xl font-bold text-white">{section.title}</h2>
             </div>
-          ))}
+            {/* Expanded Content */}
+            {expandedIndex === index && (
+              <div className="absolute inset-0 bg-black bg-opacity-75 p-6 overflow-y-auto">
+                {/* Close Button */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent section click event
+                    handleClose();
+                  }}
+                  className="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  ✕
+                </button>
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  {section.title}
+                </h2>
+                <p className="text-white mb-4">{content.description}</p>
+                <video
+                  src={content.videoUrl}
+                  controls
+                  className="w-full mb-4"
+                />
+                <div className="grid grid-cols-2 gap-4">
+                  {content.galleryImages.map((img, idx) => (
+                    <div key={idx} className="relative h-40">
+                      <Image
+                        src={img}
+                        alt={`Futuristic Landscape ${idx + 1}`}
+                        fill
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

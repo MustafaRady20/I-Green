@@ -10,6 +10,7 @@ type FormData = {
   address: string;
   description: string;
   projectType: string;
+  images: FileList; // Change to accept multiple files
 };
 
 export default function ContactPage() {
@@ -23,7 +24,7 @@ export default function ContactPage() {
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     const botToken = "8145319098:AAEYyAWVX0nIpVIYWKg4-6hGRNBoXjLkN6o";
     const chatId = "1613875614";
-    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendPhoto`;
 
     const message = `
       *New Order 🌿 Bring nature in your home 🌱*\n
@@ -36,25 +37,30 @@ export default function ContactPage() {
     `;
 
     try {
-      const response = await fetch(telegramUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: "Markdown", // Enables Markdown formatting
-        }),
-      });
+      // Loop through each image and send it to Telegram
+      for (let i = 0; i < data.images.length; i++) {
+        const formData = new FormData();
+        formData.append("chat_id", chatId);
+        formData.append("photo", data.images[i]); // Append the current image file
+        formData.append("caption", i === 0 ? message : ""); // Add the message only to the first image
+        formData.append("parse_mode", "Markdown"); // Enable Markdown formatting
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(
-          `Telegram API Error: ${response.status} - ${errorText}`
-        );
+        // Send the image and message to Telegram
+        const response = await fetch(telegramUrl, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(
+            `Telegram API Error: ${response.status} - ${errorText}`
+          );
+        }
       }
 
       // Handle success
-      alert("Message sent successfully!");
+      alert("Message and images sent successfully!");
       reset(); // Reset form after successful submission
     } catch (error) {
       console.error("Error sending message:", error);
@@ -258,6 +264,31 @@ export default function ContactPage() {
                   {errors.description && (
                     <p className="text-red-500 text-sm mt-1">
                       {errors.description.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Image Upload Field */}
+                <div>
+                  <label
+                    htmlFor="images"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Upload Images
+                  </label>
+                  <input
+                    {...register("images", {
+                      required: "At least one image is required",
+                    })}
+                    type="file"
+                    id="images"
+                    accept="image/*"
+                    multiple // Allow multiple file selection
+                    className="border border-gray-300 p-2 rounded w-full"
+                  />
+                  {errors.images && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.images.message}
                     </p>
                   )}
                 </div>
