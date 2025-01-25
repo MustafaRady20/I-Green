@@ -2,7 +2,6 @@
 import { Hero } from "@/components/modules/services/HeroService";
 import { ServiceContent } from "@/components/modules/services/ServiceContent";
 // import { ServiceContent } from '@/components/modules/services/ServiceContent'
-import SideNav, { Sidebar } from "@/components/modules/services/SideBarService";
 // import { Link } from '@/i18n/routing';
 import React from "react";
 const services = [

@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import EmblaCarousel from "@/components/modules/landing/NewGallery";
 
@@ -49,6 +48,7 @@ export default function GalleryPage() {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
+    setCategory("all");
     if (category === "all") {
       setImages(works.map((work) => work.image));
     } else {
