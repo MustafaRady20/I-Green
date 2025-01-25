@@ -37,7 +37,7 @@ export function ServiceContent() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
-    setExpandedIndex(index);
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   const handleClose = () => {
@@ -45,19 +45,28 @@ export function ServiceContent() {
   };
 
   return (
-    <div className="flex h-screen p-4 gap-4">
+    <div className="flex flex-col md:flex-row h-screen p-4 gap-4">
       {sections.map((section, index) => (
         <div
           key={index}
           className={`relative transition-all duration-300 ease-in-out cursor-pointer ${
             expandedIndex === index
-              ? "w-full" // Expanded section takes 100% of the screen
+              ? "w-full h-full" // Expanded section takes full width and height
               : expandedIndex === null
-              ? "w-[25%]" // Collapsed sections take equal width (25% for 4 sections)
+              ? "w-full md:w-[25%] h-[25vh] md:h-full" // Collapsed sections take full width on mobile, 25% on desktop
               : "hidden" // Hide other sections when one is expanded
           }`}
           onClick={() => handleClick(index)}
         >
+          {/* White Box with Section Title (Visible Only When Not Expanded) */}
+          {expandedIndex !== index && (
+            <div className="absolute top-4 left-4 bg-white p-3 rounded-lg shadow-md z-10">
+              <h2 className="text-lg font-bold text-gray-800">
+                {section.title}
+              </h2>
+            </div>
+          )}
+
           <div className="h-full overflow-hidden rounded-lg shadow-lg">
             {/* Cover Image */}
             <Image
@@ -66,10 +75,6 @@ export function ServiceContent() {
               fill
               className="object-cover"
             />
-            {/* Section Title */}
-            <div className="absolute inset-0 flex items-end p-4 bg-black bg-opacity-40">
-              <h2 className="text-2xl font-bold text-white">{section.title}</h2>
-            </div>
             {/* Expanded Content */}
             {expandedIndex === index && (
               <div className="absolute inset-0 bg-black bg-opacity-75 p-6 overflow-y-auto">
