@@ -11,6 +11,7 @@ import {
   usePrevNextButtons,
 } from "@/components/modules/landing/EmblaCarouselArrowButtons";
 import "./embla.css";
+import Image from "next/image";
 
 const TWEEN_FACTOR_BASE = 0.84;
 
@@ -109,7 +110,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              <img
+              <Image
+                fill
                 className="embla__slide__img"
                 src={slide}
                 alt="Your alt text"

@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css/skyblue";
 import "@splidejs/splide/css";
 import EmblaCarousel from "@/components/modules/landing/NewGallery";
+import Image from "next/image";
 
 const images = [
   "/potflower.jpg?height=400&width=600",
@@ -60,7 +61,8 @@ const ImageSlider: React.FC = () => {
           >
             {images.map((src, index) => (
               <SplideSlide key={index}>
-                <img
+                <Image
+                  fill
                   src={src}
                   alt={`Slide ${index + 1}`}
                   className="w-full h-[500px] rounded-2xl"
@@ -87,7 +89,8 @@ const ImageSlider: React.FC = () => {
           >
             {images.map((src, index) => (
               <SplideSlide key={index}>
-                <img
+                <Image
+                  fill
                   src={src}
                   alt={`Thumbnail ${index + 1}`}
                   className={`w-full h-full object-cover cursor-pointer border-2 ${
