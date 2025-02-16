@@ -45,7 +45,7 @@ export function ServiceContent() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen p-4 gap-4">
+    <div className="flex flex-col md:flex-row h-screen p-4">
       {sections.map((section, index) => (
         <div
           key={index}

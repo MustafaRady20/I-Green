@@ -1,74 +1,52 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
-function Stats() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: "all" });
-
-  return (
-    <main className="w-full bg-[#ffffff] relative  overflow-hidden  px-6 lg:px-4   pt-24 h-full">
-      <section
-        ref={ref}
-        className="container mx-auto max-w-6xl relative  w-full "
-      >
-        <div className="grid grid-cols-1 text-deepGreen gap-8 text-center md:grid-cols-2 lg:grid-cols-2">
-          <StatItem
-            value={24}
-            suffix="+"
-            label="years of experience"
-            isInView={isInView}
-          />
-          <StatItem
-            value={1000}
-            label="Projects Completed"
-            isInView={isInView}
-          />
-          {/* <StatItem value={4.9} decimals={1} label="Customer Satisfaction" isInView={isInView} />
-          <StatItem value={2} label="Service Awards" isInView={isInView} /> */}
-          {/* <StatItem value={2} label="Service Awards" isInView={isInView} /> */}
-        </div>
-        {/* <motion.div  className="absolute h-full   opacity-70   right-0  inset-0 " 
-            initial={{ x: 100 }} 
-            animate={{ x: -100  }} 
-            transition={{ duration: 1.75 }}
-          >
-            <Image 
-              src={"/tree3.png"}  
-              width={200} 
-              height={200} 
-              alt="sd" 
-              className="object-cover object-center absolute right-24 -bottom-5 " 
-            />
-          </motion.div> */}
-      </section>
-    </main>
-  );
-}
 
 interface StatItemProps {
   value: number;
   suffix?: string;
   decimals?: number;
   label: string;
-  isInView: boolean;
 }
 
-function StatItem({
+const statsData: StatItemProps[] = [
+  { value: 25, suffix: "+", label: "Years of Experience" },
+  { value: 720, suffix: "+", label: "gardens designed" },
+  { value: 90000, label: "SQMs of green spaces accomplished" },
+];
+
+export default function Stats() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: "all" });
+
+  return (
+    <main className="w-full bg-white relative overflow-hidden px-6 lg:px-4 pt-24 h-full">
+      <section
+        ref={ref}
+        className="container mx-auto max-w-6xl text-deepGreen text-center grid gap-8 md:grid-cols-2 xl:grid-cols-3"
+      >
+        {statsData.map((stat, index) => (
+          <StatItem key={index} {...stat} isInView={isInView} />
+        ))}
+      </section>
+    </main>
+  );
+}
+
+const StatItem: React.FC<StatItemProps & { isInView: boolean }> = ({
   value,
   suffix = "",
   decimals = 0,
   label,
   isInView,
-}: StatItemProps) {
+}) => {
   return (
     <div>
       <motion.div
-        className="text-4xl  md:text-5xl  text-darkgreen font-bold"
+        className="text-4xl md:text-5xl font-bold text-darkgreen"
         initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <CountingNumber
@@ -76,61 +54,51 @@ function StatItem({
           suffix={suffix}
           decimals={decimals}
           isInView={isInView}
+          label={""}
         />
       </motion.div>
       <motion.div
-        className=" md:text-2xl text-darkgray"
+        className="md:text-2xl text-darkgray"
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         {label}
       </motion.div>
     </div>
   );
-}
+};
 
-interface CountingNumberProps {
-  value: number;
-  suffix?: string;
-  decimals?: number;
-  isInView: boolean;
-}
-
-function CountingNumber({
+const CountingNumber: React.FC<StatItemProps & { isInView: boolean }> = ({
   value,
   suffix = "",
   decimals = 0,
   isInView,
-}: CountingNumberProps) {
+}) => {
   const ref = useRef<HTMLSpanElement>(null);
 
-  React.useEffect(() => {
-    if (!isInView || !ref.current || !scroll) return;
+  useEffect(() => {
+    if (!isInView || !ref.current) return;
 
-    const animationDuration = 2500; // 2 seconds
-    const frameDuration = 1000 / 60; // 60 fps
-    const totalFrames = Math.round(animationDuration / frameDuration);
-
+    const duration = 2500;
+    const frameDuration = 1000 / 60;
+    const totalFrames = Math.round(duration / frameDuration);
     let frame = 0;
+
     const counter = setInterval(() => {
       frame++;
       const progress = frame / totalFrames;
-      const currentCount = Math.round(value * progress);
+      const currentValue = Math.round(value * progress);
 
       if (ref.current) {
-        ref.current.textContent = currentCount.toFixed(decimals) + suffix;
+        ref.current.textContent = currentValue.toFixed(decimals) + suffix;
       }
 
-      if (frame === totalFrames) {
-        clearInterval(counter);
-      }
+      if (frame === totalFrames) clearInterval(counter);
     }, frameDuration);
 
     return () => clearInterval(counter);
   }, [value, suffix, decimals, isInView]);
 
   return <span ref={ref}>0{suffix}</span>;
-}
-
-export default Stats;
+};
