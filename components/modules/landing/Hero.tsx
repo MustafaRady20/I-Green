@@ -23,12 +23,12 @@ export function Hero() {
   ];
 
   const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
+  // const [current, setCurrent] = React.useState(0);
 
-  React.useEffect(() => {
-    if (!api) return;
-    api.on("select", () => setCurrent(api.selectedScrollSnap()));
-  }, [api]);
+  // React.useEffect(() => {
+  //   if (!api) return;
+  //   api.on("select", () => setCurrent(api.selectedScrollSnap()));
+  // }, [api]);
 
   React.useEffect(() => {
     const interval = setInterval(() => api?.scrollNext(), 5000);
