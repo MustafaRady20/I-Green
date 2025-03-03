@@ -110,7 +110,7 @@ const servicesGrid: ServiceGridTypes[] = [
     title: "Softscape",
     id: "Softscape",
     description:
-      "To blend seamlessly with urban featuring native plants and wildlife.",
+      "We design and plant lush gardens with premium lawns, shrubs, trees, and palms—creating beautiful, balanced landscapes that thrive in any environment.",
     icon: Flower2Icon,
     image: "/pexels-amie-roussel-1990939723-28965893.jpg?height=400&width=600",
     specialtyLabel: "Specialty Gardening",
@@ -119,7 +119,7 @@ const servicesGrid: ServiceGridTypes[] = [
     title: "Irrigation networks",
     id: "Irrigation networks",
     description:
-      "Container's come in various materials like terracotta, plastic, metal, wood.",
+      "Our smart irrigation systems deliver precise water efficiently, using advanced automation and weather-responsive controls to keep landscapes healthy",
     icon: Plant,
     image: "/pexels-amie-roussel-1990939723-28965893.jpg?height=400&width=600",
     specialtyLabel: "Specialty Gardening",
@@ -128,7 +128,7 @@ const servicesGrid: ServiceGridTypes[] = [
     id: "Hardscape",
     title: "Hardscape",
     description:
-      "We apply organic methods such as areas access surfaces to improve.",
+      "From elegant pergolas and mesmerizing waterfalls to durable walkways, patios, and lighting fixtures, we craft stunning outdoor spaces that seamlessly blend design, functionality, and beauty.",
     icon: Leaf,
     image: "/pexels-amie-roussel-1990939723-28965893.jpg?height=400&width=600",
     specialtyLabel: "Specialty Gardening",
@@ -136,7 +136,8 @@ const servicesGrid: ServiceGridTypes[] = [
   {
     id: "3D design ",
     title: "3D design ",
-    description: "We analyze soil composition and pH level, adding soil care.",
+    description:
+      "Fast, high-quality, and affordable 3D designs that let you visualize your outdoor space beforeconstruction begins—ensuring a smooth transformation.",
     icon: SproutIcon,
     image: "/pexels-amie-roussel-1990939723-28965893.jpg?height=400&width=600",
     specialtyLabel: "Specialty Gardening",
@@ -145,7 +146,7 @@ const servicesGrid: ServiceGridTypes[] = [
     id: "solar energy",
     title: "solar energy",
     description:
-      "Regular pruning of trees helps maintain their structural integrity intact.",
+      "At I Green, we provide smart, sustainable energy solutions, from solar power systems to advanced central heating—ensuring efficiency, comfort, and reliability for every space.",
     icon: ScissorsIcon,
     image: "/pexels-amie-roussel-1990939723-28965893.jpg?height=400&width=600",
     specialtyLabel: "Specialty Gardening",
@@ -154,7 +155,7 @@ const servicesGrid: ServiceGridTypes[] = [
     id: "events",
     title: "events",
     description:
-      "Lawn Care services upon lawn remains healthy and weed free all year.",
+      "In partnership with Cairo Tech Summit, we design and decorate events of all kinds, providing themes and essentials for weddings, corporate gatherings, and special occasions.",
     icon: TreesIcon,
     image: "/pexels-amie-roussel-1990939723-28965893.jpg?height=400&width=600",
     specialtyLabel: "Specialty Gardening",

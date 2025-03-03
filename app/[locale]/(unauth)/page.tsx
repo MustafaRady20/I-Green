@@ -1,4 +1,3 @@
-
 import AboutUs from "@/components/modules/home/AboutUsSection";
 import ContactUsSection from "@/components/modules/home/Contact-Us-Section";
 import { ClientLogoCarousel } from "@/components/modules/home/OurClientsSection";
@@ -12,18 +11,32 @@ import Stats from "@/components/modules/landing/Stats";
 import React from "react";
 
 export default function HomePage() {
+  const works: string[] = [
+    "/potflower.jpg",
 
+    "/potflower.jpg",
+
+    "/potflower.jpg",
+
+    "/basket-with-plants-copy-space.jpg",
+
+    "/basket-with-plants-copy-space.jpg",
+
+    "/basket-with-plants-copy-space.jpg",
+
+    "/basket-with-plants-copy-space.jpg",
+    "/basket-with-plants-copy-space.jpg",
+  ];
 
   return (
     <main className="max-w-[1920px]   md:w-full w-full overflow-hidden h-full ">
-       <Hero />
-       <Stats />
-       <ServicesGrid />
-       <Gallery />
-       <AboutUs />
-       <ClientLogoCarousel />
-       <ContactUsSection />
+      <Hero />
+      <Stats />
+      <ServicesGrid />
+      <Gallery />
+      <AboutUs />
+      <ClientLogoCarousel />
+      <ContactUsSection />
     </main>
   );
 }
-

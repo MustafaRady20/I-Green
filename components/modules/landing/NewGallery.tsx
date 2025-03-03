@@ -21,12 +21,12 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 const OPTIONS: EmblaOptionsType = { loop: true };
 
 type PropType = {
-  slides: string[];
+  images: string[];
   options?: EmblaOptionsType;
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options = OPTIONS } = props;
+  const { images, options = OPTIONS } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const tweenFactor = useRef(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null); // State to track the clicked image
@@ -108,7 +108,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((slide, index) => (
+          {images?.map((slide, index) => (
             <div className="embla__slide" key={index}>
               <Image
                 fill

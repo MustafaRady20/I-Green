@@ -1,8 +1,8 @@
-import { Award, Clock, Lightbulb, Shield } from 'lucide-react'
+import { Award, Clock, Lightbulb, Shield } from "lucide-react";
 
 export default function WhyChooseUs() {
-    // bg-gradient-to-r from-[#004d40] to-[#00695c]
-    
+  // bg-gradient-to-r from-[#004d40] to-[#00695c]
+
   return (
     <section className="max-w-[1920px] py-20   w-full overflow-x-hidden bg-[#004d40] relative overflow-hidden">
       {/* Futuristic background elements */}
@@ -14,12 +14,14 @@ export default function WhyChooseUs() {
 
       <div className="container mx-auto  px-4 relative">
         <div className="text-center mb-12">
-          <span className="text-[#ffd700] font-medium mb-4 inline-block">WHY CHOOSE US</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-clip-text">
+          <span className="text-[#ffd700] text-3xl font-medium mb-4 inline-block">
+            WHY CHOOSE US
+          </span>
+          {/* <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-clip-text">
             Innovation in Landscape Design,
             <br />
             Exceptional Results
-          </h2>
+          </h2> */}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -31,8 +33,12 @@ export default function WhyChooseUs() {
               <div className="mb-4 inline-block p-3 rounded-xl bg-[#ffd700]/10 text-[#ffd700]">
                 <feature.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -56,28 +62,32 @@ export default function WhyChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 const features = [
   {
-    title: "Expert Craftsmanship",
-    description: "Holds in these matters to this principle of selection: he rejects pleasures find rationally encounter.",
-    icon: Award,
-  },
-  {
-    title: "Quality Materials",
-    description: "To the claims of duty or the obligations of business it will frequently occur that have to be repudiated.",
-    icon: Shield,
-  },
-  {
-    title: "Innovative Designs",
-    description: "Belongs to those who fail in their duty through weakness of will, which is the same as saying through.",
+    title: "Innovative ",
+    description:
+      "Innovation drives our smart solutions, blending technology with nature to redefine modern landscaping.",
     icon: Lightbulb,
   },
   {
-    title: "Timely Completion",
-    description: "Holds in these matters to this principle of selection: he rejects pleasures find rationally encounter.",
+    title: "Sustainability",
+    description:
+      "Sustainability is at the heart of everything we do, blending smart solutions with natural harmony to create greener, more resilient landscapes",
     icon: Clock,
   },
-]
+  {
+    title: "Customization",
+    description:
+      "Tailoring our expertise to meet the unique needs and visions of each client.",
+    icon: Award,
+  },
+  {
+    title: "Inspiring",
+    description:
+      "We spark creativity and passion in our team and clients, bringing a deeper   appreciation for nature to every project.",
+    icon: Shield,
+  },
+];

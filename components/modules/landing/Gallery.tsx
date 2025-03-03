@@ -38,7 +38,7 @@ const ImageSlider: React.FC = () => {
   return (
     <>
       {isMobile ? (
-        <EmblaCarousel slides={images} />
+        <EmblaCarousel images={images} />
       ) : (
         <div className="w-screen px-8 xl:px-14 py-8">
           {/* ✅ Main Slider */}
