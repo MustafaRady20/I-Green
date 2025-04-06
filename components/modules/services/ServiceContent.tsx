@@ -28,18 +28,18 @@ export function ServiceContent() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div className="w-1/5 bg-gray-100 p-4 border-r">
-        <ul className="space-y-4">
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Sidebar for desktop, Navbar for mobile */}
+      <div className="md:w-1/5 w-full bg-gray-100 border-b md:border-b-0 md:border-r">
+        <ul className="flex md:flex-col overflow-x-auto md:overflow-visible space-x-2 md:space-x-0 md:space-y-4 p-4">
           {sections.map((section, index) => (
             <li
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`cursor-pointer p-2 rounded-md ${
+              className={`whitespace-nowrap cursor-pointer px-4 py-2 rounded-md text-sm md:text-base transition-all ${
                 activeIndex === index
                   ? "bg-green-600 text-white"
-                  : "hover:bg-green-100"
+                  : "hover:bg-green-100 text-gray-700"
               }`}
             >
               {section.title}
@@ -49,7 +49,7 @@ export function ServiceContent() {
       </div>
 
       {/* Content area */}
-      <div className="w-4/5 p-6">{sections[activeIndex].content}</div>
+      <div className="md:w-4/5 w-full p-6">{sections[activeIndex].content}</div>
     </div>
   );
 }
