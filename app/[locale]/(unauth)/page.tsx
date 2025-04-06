@@ -11,23 +11,6 @@ import Stats from "@/components/modules/landing/Stats";
 import React from "react";
 
 export default function HomePage() {
-  const works: string[] = [
-    "/potflower.jpg",
-
-    "/potflower.jpg",
-
-    "/potflower.jpg",
-
-    "/basket-with-plants-copy-space.jpg",
-
-    "/basket-with-plants-copy-space.jpg",
-
-    "/basket-with-plants-copy-space.jpg",
-
-    "/basket-with-plants-copy-space.jpg",
-    "/basket-with-plants-copy-space.jpg",
-  ];
-
   return (
     <main className="max-w-[1920px]   md:w-full w-full overflow-hidden h-full ">
       <Hero />

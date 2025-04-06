@@ -14,10 +14,10 @@ const images = [
   "/potflower.jpg?height=400&width=600",
 ];
 
-const ImageSlider: React.FC = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const mainRef = useRef<any | null>(null);
-  const thumbsRef = useRef<any | null>(null);
+const ImageSlider = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const mainRef = useRef(null);
+  const thumbsRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Check for mobile view
@@ -54,9 +54,8 @@ const ImageSlider: React.FC = () => {
               rewind: true,
               speed: 800,
             }}
-            // @ts-ignore
-            onMounted={(splide: any) => (mainRef.current = splide)}
-            onMove={(splide: any) => setCurrentIndex(splide.index)}
+            onMounted={(splide) => (mainRef.current = splide)}
+            onMove={(splide) => setCurrentIndex(splide.index)}
             className="rounded-2xl overflow-hidden object-cover"
           >
             {images.map((src, index) => (
@@ -83,7 +82,6 @@ const ImageSlider: React.FC = () => {
               perPage: 5,
               drag: "free",
             }}
-            // @ts-ignore
             onMounted={(splide) => (thumbsRef.current = splide)}
             className="mt-4"
           >
