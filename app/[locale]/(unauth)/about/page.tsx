@@ -22,7 +22,28 @@ const missionData = [
   },
 ];
 
-const Team = [{ name: "ENG/ Essam Badr Eldin", title: "CEO", image: "" }];
+const Team = [
+  {
+    name: "DR. Youssef badr Eldin",
+    title: "Founder and co-Founder ",
+    image: "/youssef.jpeg",
+  },
+  {
+    name: "Dr. Eslam Nasser Bayoumi ",
+    title: "Co-founder  ",
+    image: "/eslam.jpeg",
+  },
+  {
+    name: "Eng/ Ahmed Nazmi ",
+    title: "General manager  ",
+    image: "/nazmi.jpeg",
+  },
+  {
+    name: "DR. Moaz samy ",
+    title: "Public relations manager",
+    image: "/moazz.jpeg",
+  },
+];
 export default function AboutUs() {
   return (
     <div className="min-h-screen bg-[#004d40] text-white">
@@ -59,18 +80,33 @@ export default function AboutUs() {
           >
             Our Mission
           </h2>
-          <div className="flex flex-row gap-5">
-            {missionData.map((mission) => {
+          <div className="flex flex-col gap-5 px-4 sm:px-12">
+            {missionData.map((mission, index) => {
+              const isEven = index % 2 === 0; // Alternate layout for each card
+
               return (
                 <div
                   key={mission.title}
                   className="group p-6 rounded-2xl bg-[#00695c]/50 backdrop-blur-sm border border-[#ffd700]/10 hover:border-[#ffd700]/30 transition-all duration-300"
                 >
-                  <div className="flex items-start gap-4">
-                    {/* <div className="p-3 rounded-xl bg-[#ffd700]/10 text-[#ffd700]">
-                    <feature.icon className="w-6 h-6" />
-                  </div> */}
-                    <div>
+                  <div
+                    className={`flex flex-col sm:flex-row items-start gap-12 sm:gap-8 ${
+                      isEven ? "sm:flex-row" : "sm:flex-row-reverse"
+                    }`}
+                  >
+                    {/* Image Section (50% Width) */}
+                    <div className="w-full sm:w-1/2 max-h-[300px] min-h-[300px]">
+                      <Image
+                        src="/potflower.jpg?height=400&width=600"
+                        width={300}
+                        height={300}
+                        className="rounded-xl object-cover w-full h-full max-h-[300px]"
+                        alt={mission.title}
+                      />
+                    </div>
+
+                    {/* Text Section (50% Width) */}
+                    <div className="w-full sm:w-1/2">
                       <h3 className="text-xl font-semibold text-white mb-2">
                         {mission.title}
                       </h3>
@@ -141,14 +177,33 @@ export default function AboutUs() {
       </section>
 
       {/* Company History */}
-      <section className="py-20 bg-gradient-to-b from-[#004d40] ">
+      <section className="py-20 bg-gradient-to-b from-[#004d40] to-[#00251a]">
         <div className="container mx-auto px-4">
-          <h2
-            className={` text-4xl font-bold mb-8 text-Gold-light text-center`}
-          >
+          <h2 className="text-4xl font-bold mb-8 text-Gold-light text-center">
             Our Team
           </h2>
-          <div className="relative border-l-2 border-gold pl-8 ml-4"></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {Team.map((member, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 p-4 border-l-4 border-gold bg-white/10 rounded-lg shadow-lg"
+              >
+                <Image
+                  src={member.image}
+                  alt={`${member.name} image`}
+                  width={200}
+                  height={200}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-gold"
+                />
+                <div className="flex flex-col">
+                  <h3 className="text-lg font-semibold text-white">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-gray-300">{member.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

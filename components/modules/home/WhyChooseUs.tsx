@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
           ))}
         </div>
 
-        {/* Decorative line art */}
+        {/* Decorative line art
         <div className="hidden lg:block absolute right-0 top-0 h-full w-1/3">
           <div className="relative h-full w-full">
             <div className="absolute right-0 top-1/2 -translate-y-1/2">
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
               </svg>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
